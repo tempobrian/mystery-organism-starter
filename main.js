@@ -54,6 +54,18 @@ const pAequorFactory = (num, arr) => {
         )[randomNumberInside]);
       }
     },
+    willLikelySurvive() {
+      let count = 0;
+      let someDna = this.dna;
+      for (let i = 0; i < someDna.length; i++) {
+        if (someDna[i] === "C" || someDna[i] === "G") {
+          count++;
+        }
+      }
+      count /= 15;
+      count *= 100;
+      return count >= 60 ? true : false;
+    },
   };
 };
 
